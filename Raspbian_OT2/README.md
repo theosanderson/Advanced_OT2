@@ -76,7 +76,7 @@ jupyter notebook --ip=YOUR_IP_HERE
 When writing robot scripts there are a few things we need to do on startup before the robot is ready to use. These are listed in [this example notebook](https://github.com/theosanderson/Advanced_OT2/blob/master/Raspbian_OT2/Example%20script.ipynb) and reflect the things that in a normal robot are carried out by [blinkenlights](https://github.com/Opentrons/buildroot/blob/opentrons-develop/board/opentrons/ot2/rootfs-overlay/usr/bin/ot-blinkenlights) on startup. You could also make your own version of blinkenlights.
 
 ### API V2
-It helps to set some environmental variables, especially if you want to use the V2 API.
+It helps to set some environmental variables, especially if you want to use the V2 API, so you could add these to your `.bashrc`.
 ```
 export RUNNING_ON_PI=true
 export OT_SMOOTHIE_ID=AMA

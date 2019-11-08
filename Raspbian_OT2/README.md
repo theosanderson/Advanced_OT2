@@ -99,9 +99,8 @@ sudo chmod 777 /data
 ## OT2 server
 
 WIP
+Simulate balena to change how logs are written:
 ```
-apt install libsystemd-dev
-
-pip install systemd```
+export OT_SYSTEM_VERSION=1
 ```
 

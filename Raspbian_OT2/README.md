@@ -18,7 +18,7 @@ auto eth1
 iface eth1 inet dhcp
 ```
 
-to the bottom of our `/etc/network/interfaces` file to make sure this second connection got initialised. We were fortunate that our IT department assigned a static IP address to this device.
+to the bottom of our `/etc/network/interfaces` file to make sure this second connection got initialised. We were fortunate that our IT department assigned a static IP address to this device. (Note: if you do need enterprise WiFi try `sudo apt install network-manager` (you'll want it later anyway) and follow [these instructions](https://askubuntu.com/a/839763)).
 
 ### Enable SSH
 [Enable SSH](https://www.raspberrypi.org/documentation/remote-access/ssh/) access, and you should then be able to get into your Pi by typing `ssh pi@[PI'S IP ADDRESS HERE` in the console. The default password is `raspberry`.

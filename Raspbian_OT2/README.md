@@ -38,7 +38,7 @@ We need to enable the UART port which the Pi uses to talk to the SmoothieBoard t
 
 
 ### Install OpenTrons API
-It's probably good practise to do this in a virtual environment, so let's get virtualenv:
+It's probably good practice to do this in a virtual environment, so let's get virtualenv:
 ```
 sudo apt-get install python3-pip
 sudo pip3 install virtualenv 

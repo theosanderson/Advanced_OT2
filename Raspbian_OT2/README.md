@@ -98,7 +98,7 @@ sudo chmod 777 /data
 
 ## OT2 server
 
-WIP
+Once you've done the steps above you can control your robot in Jupyter or Python but you can't connect using the OT app. The commands below are a work in progress and a service would be better, but they let you use the OT app!
 
 ```
 sudo apt install network-manager
@@ -110,7 +110,8 @@ wget https://raw.githubusercontent.com/Opentrons/buildroot/opentrons-develop/boa
 sudo mv nginx.conf /etc/nginx/nginx.conf
 sudo /etc/init.d/nginx restart
 ```
-Simulate balena to change how logs are written. 
+
+Simulate balena to change how logs are written:
 
 ```
 sudo -i

@@ -7,7 +7,7 @@ These instructions rely on your OT2 running Raspbian as described [here](https:/
 Install motion:
 ```sudo apt-get install motion```
 
-Make a configuration file
+Make a configuration file:
 ```
 mkdir ~/.motion
 nano ~/.motion/motion.conf

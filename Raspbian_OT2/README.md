@@ -23,7 +23,7 @@ to the bottom of our `/etc/network/interfaces` file to make sure this second con
 [Enable SSH](https://www.raspberrypi.org/documentation/remote-access/ssh/) access, and you should then be able to get into your Pi by typing `ssh pi@[PI'S IP ADDRESS HERE` in the console. The default password is `raspberry`.
 
 ### Swap the SD cards
-At this point you should be in a position to put the SD card currently in the external Raspberry Pi into your robot. Turn off the robot first. The OT website has a [guide](https://support.opentrons.com/en/articles/1841108-changing-sd-card-in-ot-2) on how to do this which you can follow. I have a slightly different model of robot, and perhaps as a result I found it easier to remove the bolts holding the raspberry pi board to the back of the robot so it was loose enough to access the SD card.
+At this point you should be in a position to put the SD card currently in the external Raspberry Pi into your robot. Turn off the robot first. The OT website has a [guide](https://support.opentrons.com/en/articles/1841108-changing-sd-card-in-ot-2) on how to do this which you can follow. I have a slightly different model of robot, and perhaps as a result I found it easier to remove the bolts holding the Raspberry Pi board to the back of the robot so it was loose enough to access the SD card.
 
 If you are going for a wired connection you will now want to plug the USB to ethernet adapter into one of the robots internal USB ports. Then turn the whole thing on.
 
@@ -55,13 +55,21 @@ source ot_env/bin/activate
 
 and now install opentrons.
 
-```pip install opentrons```
+```
+pip install opentrons
+```
 
 Now we are very nearly there!
 
 We might want to install Jupyter
 
-```pip install jupyter```
+```
+pip install jupyter
+```
 
-```jupyter notebook --ip=YOUR_IP_HERE```
+```
+jupyter notebook --ip=YOUR_IP_HERE
+```
+
+When writing robot scripts there are a few things we need to do on startup before the robot is ready to use. These are listed in [this example notebook](https://github.com/theosanderson/Advanced_OT2/blob/master/Raspbian_OT2/Example%20script.ipynb) and reflect the things that in a normal robot are carried out by [blinkenlights](https://github.com/Opentrons/buildroot/blob/opentrons-develop/board/opentrons/ot2/rootfs-overlay/usr/bin/ot-blinkenlights) on startup. You could also make your own version of blinkenlights.
 

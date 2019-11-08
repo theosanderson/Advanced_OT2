@@ -31,7 +31,7 @@ If you are going for a wired connection you will now want to plug the USB to eth
 
 ## Make robot-specific customizations
 ### SSH into your robot
-You should now be able to access your robot by SSH, as before with the Pi. Now we need to change some things to allow the robot to talk to robot componenents.
+You should now be able to access your robot by SSH, as before with the Pi. Now we need to change some things to allow the Pi to talk to robot componenents.
 
 ### Enable UART
 We need to enable the UART port which the Pi uses to talk to the SmoothieBoard that controls the robots motors. To do this edit `/boot/config.txt` (i.e. `sudo nano /boot/config.txt`) and edit the section at the bottom. We need to add `enable_uart=1` (replacing any other enable_uart line) and to add `dtoverlay=pi3-disable-bt`. The first will enable the UART port, the second will disable the Pi's bluetooth which normally uses the same pins.

@@ -16,5 +16,25 @@ nano ~/.motion/motion.conf
 Paste these settings in:
 
 ```
+webcam_port 8081
+webcam_localhost off
+stream_port 8080
+stream_localhost off
+output_pictures off
+framerate 20
+stream_quality 70
+width 640
+height 480
+ffmpeg_video_codec mpeg4
+stream_maxrate 10
+```
 
+Start the stream:
+```
+motion
+```
+
+Then access the camera through your browser at:
+```
+http://[YOUR_IP_ADDRESS]:8080/
 ```

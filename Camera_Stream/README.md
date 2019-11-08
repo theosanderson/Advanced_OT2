@@ -4,7 +4,7 @@ The OT2 has a webcam! It would be great to stream it over HTTP.
 
 ![eg](https://github.com/theosanderson/Advanced_OT2/blob/master/Camera_Stream/stream.gif?raw=true)
 
-These instructions rely on your OT2 running Raspbian as described [here](https://github.com/theosanderson/Advanced_OT2/tree/master/Raspbian_OT2).
+These instructions rely on your OT2 running Raspbian as described [here](https://github.com/theosanderson/Advanced_OT2/tree/master/Raspbian_OT2) (it may be possible to get this working on a conventional OT2 by copying the motion binary onto the machine, but I haven't tried this).
 
 Install motion:
 ```sudo apt-get install motion```

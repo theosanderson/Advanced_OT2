@@ -99,7 +99,16 @@ sudo chmod 777 /data
 ## OT2 server
 
 WIP
-Simulate balena to change how logs are written. Runs without errors but doesn't appear in OT app - update server needed?
+
+
+```
+apt install nginx
+wget https://raw.githubusercontent.com/Opentrons/buildroot/opentrons-develop/board/opentrons/ot2/rootfs-overlay/etc/nginx/nginx.conf
+sudo mv nginx.conf /etc/nginx/nginx.conf
+sudo /etc/init.d/nginx restart
+```
+Simulate balena to change how logs are written. 
+
 ```
 sudo -i
 export OT_SYSTEM_VERSION=1

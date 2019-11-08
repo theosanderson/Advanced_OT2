@@ -100,9 +100,12 @@ sudo chmod 777 /data
 
 WIP
 
+```
+sudo apt install network-manager
+```
 
 ```
-apt install nginx
+sudo apt install nginx
 wget https://raw.githubusercontent.com/Opentrons/buildroot/opentrons-develop/board/opentrons/ot2/rootfs-overlay/etc/nginx/nginx.conf
 sudo mv nginx.conf /etc/nginx/nginx.conf
 sudo /etc/init.d/nginx restart

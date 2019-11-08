@@ -96,7 +96,7 @@ sudo chmod 777 /data
 ```
 
 
-#OT2 server
+## OT2 server
 
 WIP
 ```apt install libsystemd-dev

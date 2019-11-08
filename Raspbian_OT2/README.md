@@ -97,7 +97,7 @@ sudo chmod 777 /data
 
 ## OT2 server
 
-Once you've done the steps above you can control your robot in Jupyter or Python but you can't connect using the OT app. The commands below are a work in progress and a service would be better, but they let you use the OT app!
+Once you've done the steps above you can control your robot in Jupyter or Python but you can't connect using the OT app. The commands below are a work in progress and a service would be better, but they let you use the OT app (you'll need to manually add the robot's IP in advanced settings)!
 
 ```
 sudo apt install network-manager

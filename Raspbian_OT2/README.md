@@ -55,7 +55,7 @@ And get into it:
 source ot_env/bin/activate
 ```
 
-and now install opentrons.
+and now install the Opentrons API.
 
 ```
 pip install opentrons

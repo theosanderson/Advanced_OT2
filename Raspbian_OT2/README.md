@@ -99,7 +99,7 @@ sudo chmod 777 /data
 ## OT2 server
 
 WIP
-Simulate balena to change how logs are written:
+Simulate balena to change how logs are written. Runs without errors but doesn't appear in OT app - update server needed?
 ```
 sudo -i
 export OT_SYSTEM_VERSION=1

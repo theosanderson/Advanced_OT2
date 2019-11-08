@@ -1,8 +1,8 @@
 ## Installing Raspbian on the OT2
 
-The OT2 is designed for a reliable user-friendly experience for relatively non-technical users. It therefore runs on a Raspberry Pi in a very locked down version of the Alpine Linux distribution. This is great if you just want to interact with it throught the OT app. But if you want to do much crazier things it can be difficult. It's hard to access the files on the filesystem, and most parts of the operating system will be deleted and reset whenever the machine is rebooted. You can't install "packages" as one is used to doing on Debian-based distributions.
+The OT2 is designed for a reliable user-friendly experience for relatively non-technical users. It therefore runs on a Raspberry Pi in a very locked down version of the Alpine Linux distribution. This is great if you just want to interact with it through the OT app. But if you want to do much crazier things it can be complex. It's hard to access the files on the filesystem, and most parts of the operating system will be reset whenever the machine is rebooted. You can't install "packages", as one typically does on Debian-based distributions.
 
-Luckily, since the OT software is open-source it's not too hard to install your own distribution of choice on the Raspberry Pi. Here are some instructions for doing that. Note that at the present time this will get you a machine that allows you to interact with the robot through Python with the OpenTrons API but does *not* allow you to use the OpenTrons app. Thus it is definitely for advanced users only - although it should not be too hard to get the OT app working I think.
+Luckily, since the OT software is open-source it's not too hard to install your own distribution of choice on the Raspberry Pi. Here are some instructions of what I did to achieve that. Note that at the present time this will get you a machine that allows you to interact with the robot through Python with the Opentrons API but does *not* allow you to use the Opentrons app. Thus it is definitely for advanced users only - although it should not be too hard to get the OT app working I think.
 
 ## Steps
 

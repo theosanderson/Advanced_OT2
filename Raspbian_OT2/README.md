@@ -2,4 +2,41 @@ The OT2 is designed for a reliable user-friendly experience for relatively non-t
 
 Luckily, since the OT software is open-source it's not too hard to install your own distribution of choice on the Raspberry Pi. Here are some instructions for doing that. Note that at the present time this will get you a machine that allows you to interact with the robot through Python with the OpenTrons API but does *not* allow you to use the OpenTrons app. Thus it is definitely for advanced users only - although it should not be too hard to get the OT app working I think.
 
-First get a spare micro-SD card to install Raspbian on. In fact it's going to be much easier if you just get a whole second Raspberry Pi Model B+. It's not like they are are expensive. Setting up a standard raspberry pi is beyond the scope of this tutorial but is described [here](https://www.raspberrypi.org/documentation/installation/installing-images/).
+## Steps
+
+### Get a standard Raspberry Pi working
+
+First get a spare micro-SD card to install Raspbian on. In fact it's going to be much easier if you just get a whole second Raspberry Pi Model B+. It's not like they are are expensive. Setting up a standard Raspberry Pi is beyond the scope of this tutorial but is described [here](https://www.raspberrypi.org/documentation/installation/installing-images/).
+
+### Get it networked
+
+Get your Pi connected to a network you have access to. Again, this is a bit out of scope. Connecting the Pi to enterprise WiFi networks can actually be a really annoying process, and a wired connection is more reliable. We ended up plugging a USB to ethernet adapter into the Pi, and had to get its MAC address whitelisted by our IT department. We also added:
+
+```
+auto eth1
+iface eth1 inet dhcp
+```
+
+to the bottom of our `/etc/network/interfaces` file to make sure this second connection got initialised. We were fortunate that our IT department assigned a static IP address to this device.
+
+### Enable SSH
+[Enable SSH](https://www.raspberrypi.org/documentation/remote-access/ssh/) access, and you should then be able to get into your Pi by typing `ssh pi@[PI'S IP ADDRESS HERE` in the console. The default password is `raspberry`.
+
+### Swap the SD cards
+At this point you should be in a position to put the SD card currently in the external Raspberry Pi into your robot. Turn off the robot first. The OT website has a [guide](https://support.opentrons.com/en/articles/1841108-changing-sd-card-in-ot-2) on how to do this which you can follow. I have a slightly different model of robot, and perhaps as a result I found it easier to remove the bolts holding the raspberry pi board to the back of the robot so it was loose enough to access the SD card.
+
+If you are going for a wired connection you will now want to plug the USB to ethernet adapter into one of the robots internal USB ports. Then turn the whole thing on.
+
+## Make robot-specific customizations
+### SSH into your robot
+You should now be able to access your robot by SSH, as before with the Pi. Now we need to change some things to allow the robot to talk to robot componenents.
+
+### Enable UART
+We need to enable the UART port which the Pi uses to talk to the SmoothieBoard that controls the robots motors. To do this edit `/boot/config.txt` (i.e. `sudo nano /boot/config.txt`) and edit the section at the bottom. We need to add `enable_uart=1` (replacing any other enable_uart line) and to add `dtoverlay=pi3-disable-bt`. The first will enable the UART port, the second will disable the Pi's bluetooth which normally uses the same pins.
+
+We also need to run this command to disable a service that would otherwise hog the UART port: 
+```sudo systemctl disable hciuart```
+
+### Install 
+
+

@@ -8,7 +8,7 @@ Luckily, since the OT software is open-source it's not too hard to install your 
 
 ### Get a standard Raspberry Pi working
 
-First get a spare micro-SD card to install Raspbian on. In fact it's going to be much easier if you just get a whole second Raspberry Pi Model B+. It's not like they are are expensive. Setting up a standard Raspberry Pi is beyond the scope of this tutorial but is described [here](https://www.raspberrypi.org/documentation/installation/installing-images/).
+First get a spare micro-SD card to install Raspbian on. In fact it's going to be much easier if you just get a whole second Raspberry Pi 3 Model B+. It's not like they are are expensive. Setting up a standard Raspberry Pi is beyond the scope of this tutorial but is described [here](https://www.raspberrypi.org/documentation/installation/installing-images/).
 
 ### Get it networked
 

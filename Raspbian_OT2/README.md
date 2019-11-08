@@ -101,6 +101,11 @@ sudo chmod 777 /data
 WIP
 Simulate balena to change how logs are written:
 ```
+sudo -i
 export OT_SYSTEM_VERSION=1
+export RUNNING_ON_PI=true
+export OT_SMOOTHIE_ID=AMA
+source ~pi/ot_env/bin/activate
+python -m opentrons.main -U /run/aiohttp.sock --hardware-server
 ```
 

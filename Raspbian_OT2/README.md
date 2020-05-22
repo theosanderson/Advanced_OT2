@@ -13,20 +13,18 @@ Install Raspbian Lite on the new SD card using the [Raspberry Pi imager](https:/
 
 With the SD card still connected to your computer (you might need to reinsert it to mount it), make an empty file called `ssh` in the `boot` part of the SD card. This will allow the Pi to be connected to over SSH so that you don't need a monitor.
 
-If you do not have good control over your network (e.g. university not home) then also open `cmdline.txt` and add at the end ` ip=169.254.1.1` -- this will allow you to connect using the OT2's USB port.
-
 
 ### Swap the SD cards
 At this point you should be in a position to put the SD card currently in the external Raspberry Pi into your robot. Turn off the robot first. The OT website has a [guide](https://support.opentrons.com/en/articles/1841108-changing-sd-card-in-ot-2) on how to do this which you can follow. I have a slightly different model of robot, and perhaps as a result I found it easier to remove the bolts holding the Raspberry Pi board to the back of the robot so it was loose enough to access the SD card.
 
 ### Initial connection
 
-Now connect to the OT2 over USB. Note that this actually means connecting to it through its ethernet port, since the USB port is connected to a USB-ethernet adapter which is connected to the Pi's USB port. Turn on the OT2 power and wait a while for the connection to be established (you will see it in your network settings). It may say that your computer has a self-assigned IP. That's OK. Now connect to the Pi
+Now connect to the OT2 over USB. Note that this actually means connecting to it through its ethernet port, since the USB port is connected to a USB-ethernet adapter which is connected to the Pi's USB port. Turn on the OT2 power and wait a while for the connection to be established (you will see it in your network settings). It may say that your computer has a self-assigned IP. That's OK. Now connect to the Pi (this requires Bonjour, if you don't have a mac, install it on your computer).
 ```
-ssh pi@169.255.1.1
+ssh pi@raspberrypi.local
 ```
 
-The password is `raspberry`.
+The password is `raspberry`. 
 
 ### Get it networked
 

@@ -26,6 +26,10 @@ ssh pi@raspberrypi.local
 
 The password is `raspberry`. 
 
+Type `passwd` to set a new password for security. 
+
+Use `raspi-config` and enable WiFi by selecting your country. Unfortunately this setup won't work for enterprise Wifi (see below).
+
 ### Get it networked
 
 Get your Pi connected to a network you have access to. Again, this is a bit out of scope. Connecting the Pi to enterprise WiFi networks can actually be a really annoying process, and a wired connection is more reliable. We ended up plugging a USB to ethernet adapter into the Pi, and had to get its MAC address whitelisted by our IT department. We also added:
@@ -36,6 +40,8 @@ iface eth1 inet dhcp
 ```
 
 to the bottom of our `/etc/network/interfaces` file to make sure this second connection got initialised. We were fortunate that our IT department assigned a static IP address to this device. (Note: if you do need enterprise WiFi try `sudo apt install network-manager` (you'll want it later anyway) and follow [these instructions](https://askubuntu.com/a/839763)).
+
+
 
 
 ## Make robot-specific customizations

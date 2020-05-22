@@ -5,9 +5,28 @@ The OT2 is designed for a reliable user-friendly experience for relatively non-t
 Luckily, since the OT software is open-source it's not too hard to install your own distribution of choice on the Raspberry Pi. Here are some instructions of what I did to achieve that. This is definitely for advanced users only - there's no reason to do it unless there's something you can't do with the normal system!
 ## Steps
 
-### Get a standard Raspberry Pi working
+### Install Raspbian on a spare SD card
 
-First get a spare micro-SD card to install Raspbian on. In fact it's going to be much easier if you just get a whole second Raspberry Pi 3 Model B+. It's not like they are are expensive. Setting up a standard Raspberry Pi is beyond the scope of this tutorial but is described [here](https://www.raspberrypi.org/documentation/installation/installing-images/).
+Get a spare mini SD card, so you can keep your old OT2 SD card intact and swap back whenever you like.
+
+Install Raspbian Lite on the new SD card using the [Raspberry Pi imager](https://www.raspberrypi.org/downloads/).
+
+With the SD card still connected to your computer (you might need to reinsert it to mount it), make an empty file called `ssh` in the `boot` part of the SD card. This will allow the Pi to be connected to over SSH so that you don't need a monitor.
+
+If you do not have good control over your network (e.g. university not home) then also open `cmdline.txt` and add at the end ` ip=169.254.1.1` -- this will allow you to connect using the OT2's USB port.
+
+
+### Swap the SD cards
+At this point you should be in a position to put the SD card currently in the external Raspberry Pi into your robot. Turn off the robot first. The OT website has a [guide](https://support.opentrons.com/en/articles/1841108-changing-sd-card-in-ot-2) on how to do this which you can follow. I have a slightly different model of robot, and perhaps as a result I found it easier to remove the bolts holding the Raspberry Pi board to the back of the robot so it was loose enough to access the SD card.
+
+### Initial connection
+
+Now connect to the OT2 over USB. Note that this actually means connecting to it through its ethernet port, since the USB port is connected to a USB-ethernet adapter which is connected to the Pi's USB port. Turn on the OT2 power and wait a while for the connection to be established (you will see it in your network settings). It may say that your computer has a self-assigned IP. That's OK. Now connect to the Pi
+```
+ssh pi@169.255.1.1
+```
+
+The password is `raspberry`.
 
 ### Get it networked
 
@@ -20,13 +39,6 @@ iface eth1 inet dhcp
 
 to the bottom of our `/etc/network/interfaces` file to make sure this second connection got initialised. We were fortunate that our IT department assigned a static IP address to this device. (Note: if you do need enterprise WiFi try `sudo apt install network-manager` (you'll want it later anyway) and follow [these instructions](https://askubuntu.com/a/839763)).
 
-### Enable SSH
-[Enable SSH](https://www.raspberrypi.org/documentation/remote-access/ssh/) access, and you should then be able to get into your Pi by typing `ssh pi@[PI'S IP ADDRESS HERE` in the console. The default password is `raspberry`.
-
-### Swap the SD cards
-At this point you should be in a position to put the SD card currently in the external Raspberry Pi into your robot. Turn off the robot first. The OT website has a [guide](https://support.opentrons.com/en/articles/1841108-changing-sd-card-in-ot-2) on how to do this which you can follow. I have a slightly different model of robot, and perhaps as a result I found it easier to remove the bolts holding the Raspberry Pi board to the back of the robot so it was loose enough to access the SD card.
-
-If you are going for a wired connection you will now want to plug the USB to ethernet adapter into one of the robots internal USB ports. Then turn the whole thing on.
 
 ## Make robot-specific customizations
 ### SSH into your robot

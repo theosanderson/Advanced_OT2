@@ -1,5 +1,7 @@
 ## Installing Raspbian on the OT2
 
+** THIS IS NOW OUT OF DATE **
+
 The OT2 is designed for a reliable user-friendly experience for relatively non-technical users. It therefore runs on a Raspberry Pi in a very locked down version of the Alpine Linux distribution. This is great if you just want to interact with it through the OT app. But if you want to do much crazier things it can be complex. It's hard to access the files on the filesystem, and most parts of the operating system will be reset whenever the machine is rebooted. You can't install "packages", as one typically does on Debian-based distributions.
 
 Luckily, since the OT software is open-source it's not too hard to install your own distribution of choice on the Raspberry Pi. Here are some instructions of what I did to achieve that. This is definitely for advanced users only - there's no reason to do it unless there's something you can't do with the normal system!
@@ -50,6 +52,14 @@ You should now be able to access your robot by SSH, as before with the Pi. Now w
 
 ### Enable UART
 We need to enable the UART port which the Pi uses to talk to the SmoothieBoard that controls the robots motors. To do this edit `/boot/config.txt` (i.e. `sudo nano /boot/config.txt`) and edit the section at the bottom. We need to add `enable_uart=1` (replacing any other enable_uart line) and to add `dtoverlay=pi3-disable-bt`. The first will enable the UART port, the second will disable the Pi's bluetooth which normally uses the same pins.
+
+### Libgpiod
+```git clone git://git.kernel.org/pub/scm/libs/libgpiod/libgpiod.git
+cd libgpiod
+git checkout v1.4.2 -b v1.4.2
+./autogen.sh --enable-tools=yes
+make
+sudo make install```
 
 
 ### Install OpenTrons API

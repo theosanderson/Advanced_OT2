@@ -69,12 +69,14 @@ udo apt-get update && sudo apt-get install -y \
    swig3.0 \
    wget
 ```
+
 ```git clone git://git.kernel.org/pub/scm/libs/libgpiod/libgpiod.git
 cd libgpiod
 git checkout v1.4.2 -b v1.4.2
 ./autogen.sh --enable-tools=yes
 make
-sudo make install```
+sudo make install
+```
 
 
 ### Install OpenTrons API

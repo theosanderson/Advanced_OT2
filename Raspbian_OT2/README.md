@@ -54,6 +54,21 @@ You should now be able to access your robot by SSH, as before with the Pi. Now w
 We need to enable the UART port which the Pi uses to talk to the SmoothieBoard that controls the robots motors. To do this edit `/boot/config.txt` (i.e. `sudo nano /boot/config.txt`) and edit the section at the bottom. We need to add `enable_uart=1` (replacing any other enable_uart line) and to add `dtoverlay=pi3-disable-bt`. The first will enable the UART port, the second will disable the Pi's bluetooth which normally uses the same pins.
 
 ### Libgpiod
+```
+udo apt-get update && sudo apt-get install -y \
+   autoconf \
+   autoconf-archive \
+   automake \
+   build-essential \
+   git \
+   libtool \
+   pkg-config \
+   python3 \
+   python3-dev \
+   python3-setuptools \
+   swig3.0 \
+   wget
+```
 ```git clone git://git.kernel.org/pub/scm/libs/libgpiod/libgpiod.git
 cd libgpiod
 git checkout v1.4.2 -b v1.4.2

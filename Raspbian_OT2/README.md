@@ -24,3 +24,5 @@
   171  cp gpiod.cpython-37m-arm-linux-gnueabihf.so ~/ot_env/lib/python3.7/site-packages/
 
 ```
+
+```mkdir /usr/lib/firmware```

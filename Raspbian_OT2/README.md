@@ -25,4 +25,6 @@
 
 ```
 
-```mkdir /usr/lib/firmware```
+```mkdir /usr/lib/firmware
+
+mkdir mkdir /var/lib/otupdate/```
